@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelsa Bar & Restaurant – Annecy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --creme:       #F5F0E8;
+    --creme-dk:    #EDE5D5;
+    --creme-dkk:   #E0D5C0;
+    --vert:        #2D4A35;
+    --vert-mid:    #3D6147;
+    --vert-lt:     #527A5C;
+    --vert-pale:   #8AAF93;
+    --vert-wash:   #C8DACC;
+    --vert-fog:    #E8F0EA;
+    --blanc:       #FDFAF4;
+    --txt:         #1E2D22;
+    --txt-mid:     #3A4E3E;
+    --txt-lt:      #6B7D6E;
+    --or:          #B8962E;
+    --or-lt:       #D4B060;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--blanc);
+    color: var(--txt);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: var(--vert);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 56px; height: 66px;
+    border-bottom: 1px solid rgba(200,218,204,.2);
+  }
+
+  .logo-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px; color: var(--creme);
+    line-height: 1; letter-spacing: 1px;
+  }
+
+  .logo-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px; font-weight: 400;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--vert-pale); margin-top: -4px; display: block;
+  }
+
+  nav ul {
+    display: flex; list-style: none; gap: 32px; align-items: center;
+  }
+
+  nav a {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px; font-weight: 400;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--vert-wash); text-decoration: none;
+    transition: color .2s;
+  }
+
+  nav a:hover { color: var(--creme); }
+
+  .nav-cta {
+    background: var(--creme) !important;
+    color: var(--vert) !important;
+    padding: 9px 22px; border-radius: 1px;
+    font-weight: 500 !important;
+    transition: background .2s !important;
+  }
+
+  .nav-cta:hover { background: var(--creme-dk) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(175deg, rgba(29,45,34,.75) 0%, rgba(45,74,53,.5) 55%, rgba(29,45,34,.78) 100%),
+      url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80') center/cover no-repeat;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 140px 24px 100px;
+    position: relative;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--blanc));
+    pointer-events: none;
+  }
+
+  .hero-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(72px, 12vw, 140px);
+    color: var(--creme); line-height: 1;
+    margin-bottom: 4px;
+    opacity: 0; animation: fadeUp .9s .1s forwards;
+    text-shadow: 0 2px 24px rgba(0,0,0,.2);
+  }
+
+  .hero-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px; font-weight: 400;
+    letter-spacing: 6px; text-transform: uppercase;
+    color: var(--vert-wash); margin-bottom: 20px;
+    opacity: 0; animation: fadeUp .9s .3s forwards;
+  }
+
+  .hero-divider {
+    display: flex; align-items: center; gap: 16px;
+    justify-content: center; margin-bottom: 28px;
+    opacity: 0; animation: fadeUp .9s .45s forwards;
+  }
+
+  .h-line { height: 1px; width: 60px; background: rgba(200,218,204,.4); }
+  .h-leaf { color: var(--vert-pale); font-size: 14px; }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2vw, 22px);
+    font-style: italic; color: rgba(237,229,213,.85);
+    max-width: 480px; line-height: 1.7; margin-bottom: 44px;
+    opacity: 0; animation: fadeUp .9s .6s forwards;
+  }
+
+  .hero-btns {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    opacity: 0; animation: fadeUp .9s .8s forwards;
+  }
+
+  .btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 15px 36px; border-radius: 1px;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: all .2s; display: inline-block;
+  }
+
+  .btn-cream { background: var(--creme); color: var(--vert); }
+  .btn-cream:hover { background: var(--creme-dk); transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--creme); border: 1px solid rgba(237,229,213,.4); }
+  .btn-outline:hover { border-color: var(--creme); }
+
+  .hero-badges {
+    position: absolute; bottom: 128px;
+    display: flex; gap: 36px; flex-wrap: wrap; justify-content: center;
+    opacity: 0; animation: fadeUp .9s 1.0s forwards;
+  }
+
+  .hero-badge-item {
+    font-size: 10px; font-weight: 400; letter-spacing: 2px;
+    text-transform: uppercase; color: rgba(138,175,147,.9);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .badge-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--vert-pale); }
+
+  /* ── SECTION BASE ── */
+  section { padding: 96px 56px; }
+
+  .sec-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--vert-lt); text-align: center; margin-bottom: 8px;
+  }
+
+  .sec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 4vw, 52px);
+    color: var(--vert); text-align: center; line-height: 1.15;
+    font-weight: 300; margin-bottom: 16px;
+  }
+
+  .sec-title em { font-style: italic; }
+
+  .sec-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(28px, 4vw, 46px);
+    color: var(--vert-lt); text-align: center;
+    line-height: 1; margin-bottom: 8px;
+  }
+
+  .orn {
+    display: flex; align-items: center; justify-content: center;
+    gap: 14px; margin-bottom: 52px;
+  }
+
+  .orn-l { height: 1px; width: 64px; background: linear-gradient(to right, transparent, var(--vert-wash)); }
+  .orn-r { height: 1px; width: 64px; background: linear-gradient(to left, transparent, var(--vert-wash)); }
+  .orn-leaf { color: var(--vert-pale); font-size: 12px; }
+
+  /* ── ABOUT ── */
+  .about { background: var(--blanc); }
+
+  .about-wrap {
+    max-width: 1080px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+
+  .about-imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 260px 200px;
+    gap: 10px;
+  }
+
+  .about-imgs img {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 1px; display: block;
+    transition: transform .55s ease;
+  }
+
+  .about-imgs img:hover { transform: scale(1.04); }
+  .about-imgs img:first-child { grid-column: 1/-1; }
+
+  .about-text .sec-title,
+  .about-text .sec-label,
+  .about-text .sec-script { text-align: left; }
+  .about-text .orn { justify-content: flex-start; }
+
+  .about-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px; line-height: 1.85;
+    color: var(--txt-mid); margin-bottom: 16px;
+    font-weight: 300;
+  }
+
+  .about-pills {
+    display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 32px;
+  }
+
+  .pill {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px; font-weight: 400; letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid var(--vert-wash);
+    color: var(--vert-mid); padding: 6px 14px; border-radius: 1px;
+  }
+
+  /* ── MENU ── */
+  .menu-sec { background: var(--creme); }
+
+  /* Tab nav */
+  .menu-tabs {
+    display: flex; justify-content: center; gap: 0;
+    margin-bottom: 48px; flex-wrap: wrap;
+    border: 1px solid var(--vert-wash); border-radius: 1px;
+    max-width: 860px; margin-left: auto; margin-right: auto;
+    overflow: hidden;
+  }
+
+  .tab-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 14px 22px; background: transparent;
+    color: var(--txt-lt); border: none; cursor: pointer;
+    transition: all .2s; border-right: 1px solid var(--vert-wash);
+    flex: 1; min-width: 100px;
+  }
+
+  .tab-btn:last-child { border-right: none; }
+  .tab-btn.active { background: var(--vert); color: var(--creme); }
+  .tab-btn:hover:not(.active) { background: var(--vert-fog); color: var(--vert); }
+
+  .tab-panel { display: none; max-width: 860px; margin: 0 auto; }
+  .tab-panel.active { display: block; }
+
+  /* Menu category */
+  .menu-cat { margin-bottom: 44px; }
+
+  .menu-cat-head {
+    display: flex; align-items: center; gap: 18px; margin-bottom: 20px;
+  }
+
+  .mcat-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 600;
+    color: var(--vert); letter-spacing: 1px; white-space: nowrap;
+    font-style: italic;
+  }
+
+  .mcat-line {
+    flex: 1; height: 1px;
+    background: linear-gradient(to right, var(--vert-wash), transparent);
+  }
+
+  .menu-item {
+    display: flex; align-items: baseline; padding: 9px 0;
+    border-bottom: 1px solid rgba(200,218,204,.4);
+  }
+
+  .menu-item:last-child { border-bottom: none; }
+
+  .mi-wrap { flex: 1; min-width: 0; }
+
+  .mi-name {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px; font-weight: 400; color: var(--txt);
+  }
+
+  .mi-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px; font-style: italic; color: var(--txt-lt);
+    line-height: 1.5; margin-top: 2px;
+  }
+
+  .mi-allergens {
+    font-size: 11px; color: var(--vert-pale); margin-top: 2px;
+  }
+
+  .mi-dots { flex: 1; border-bottom: 1px dotted var(--vert-wash); margin: 0 12px 4px; min-width: 20px; }
+
+  .mi-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px; color: var(--vert); white-space: nowrap;
+    font-weight: 600;
+  }
+
+  /* Wine table */
+  .wine-table-head {
+    display: grid; grid-template-columns: 1fr 60px 60px 60px 60px;
+    gap: 8px; padding: 8px 0 8px;
+    border-bottom: 1px solid var(--vert-wash); margin-bottom: 8px;
+  }
+
+  .wine-col-lbl {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px; font-weight: 500; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--vert-lt); text-align: right;
+  }
+
+  .wine-col-lbl:first-child { text-align: left; }
+
+  .wine-item {
+    display: grid; grid-template-columns: 1fr 60px 60px 60px 60px;
+    gap: 8px; padding: 10px 0;
+    border-bottom: 1px solid rgba(200,218,204,.35);
+    align-items: start;
+  }
+
+  .wine-item:last-child { border-bottom: none; }
+
+  .wine-name {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px; font-weight: 400; color: var(--txt);
+  }
+
+  .wine-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px; font-style: italic; color: var(--txt-lt); margin-top: 3px;
+  }
+
+  .wine-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px; color: var(--vert); text-align: right;
+  }
+
+  /* Boissons sub table */
+  .drink-item {
+    display: flex; align-items: baseline; padding: 8px 0;
+    border-bottom: 1px solid rgba(200,218,204,.35);
+  }
+
+  .drink-item:last-child { border-bottom: none; }
+
+  .d-name { font-size: 14px; color: var(--txt); flex: 1; }
+  .d-size { font-size: 12px; color: var(--txt-lt); margin-right: 8px; }
+  .d-price { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--vert); font-weight: 600; }
+
+  .menu-note-box {
+    background: var(--vert-fog);
+    border-left: 2px solid var(--vert-pale);
+    padding: 12px 16px; margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px; font-style: italic; color: var(--txt-mid);
+    border-radius: 1px;
+  }
+
+  .allergen-legend {
+    margin-top: 36px;
+    padding: 14px 18px;
+    background: var(--blanc);
+    border: 1px solid var(--creme-dkk);
+    border-radius: 1px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px; color: var(--txt-lt);
+    line-height: 1.8;
+  }
+
+  /* Menu enfant */
+  .menu-enfant-box {
+    background: var(--vert-fog);
+    border: 1px solid var(--vert-wash);
+    border-radius: 1px; padding: 28px 32px; text-align: center;
+  }
+
+  .menu-enfant-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-style: italic; color: var(--vert);
+    margin-bottom: 6px;
+  }
+
+  .menu-enfant-price {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px; font-weight: 500; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--vert-lt); margin-bottom: 16px;
+  }
+
+  .menu-enfant-items p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; color: var(--txt-mid); line-height: 1.9;
+  }
+
+  /* ── RÉSERVATION ── */
+  .booking { background: var(--blanc); }
+
+  .booking-layout {
+    max-width: 1080px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.35fr; gap: 64px; align-items: start;
+  }
+
+  .booking-side .sec-title,
+  .booking-side .sec-label,
+  .booking-side .sec-script { text-align: left; }
+  .booking-side .orn { justify-content: flex-start; }
+
+  .bk-list { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; }
+
+  .bk-row { display: flex; gap: 14px; align-items: flex-start; }
+
+  .bk-icon {
+    width: 34px; height: 34px; flex-shrink: 0;
+    background: var(--vert-fog); border: 1px solid var(--vert-wash);
+    border-radius: 1px; display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+
+  .bk-text strong {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--vert); display: block; margin-bottom: 3px;
+  }
+
+  .bk-text span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; color: var(--txt-mid); line-height: 1.6;
+  }
+
+  .booking-card {
+    background: var(--creme);
+    border: 1px solid var(--creme-dkk);
+    border-radius: 2px; padding: 44px 40px;
+    box-shadow: 0 4px 24px rgba(45,74,53,.06);
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1/-1; }
+
+  label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--vert-mid);
+  }
+
+  input, select, textarea {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; color: var(--txt);
+    background: var(--blanc); border: 1px solid var(--creme-dkk);
+    border-radius: 1px; padding: 11px 14px;
+    outline: none; transition: border-color .2s;
+    -webkit-appearance: none;
+  }
+
+  input:focus, select:focus, textarea:focus { border-color: var(--vert-mid); }
+  textarea { resize: vertical; min-height: 88px; }
+
+  .btn-submit {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px; font-weight: 500; letter-spacing: 3px;
+    text-transform: uppercase; background: var(--vert);
+    color: var(--creme); border: none; padding: 16px 0;
+    border-radius: 1px; cursor: pointer; width: 100%; margin-top: 8px;
+    transition: background .2s, transform .15s;
+  }
+
+  .btn-submit:hover { background: var(--vert-mid); transform: translateY(-2px); }
+
+  .form-legal {
+    font-size: 11px; color: var(--txt-lt);
+    font-style: italic; margin-top: 12px; text-align: center;
+  }
+
+  /* ── AVIS ── */
+  .avis { background: var(--vert); padding: 96px 56px; }
+
+  .avis .sec-label { color: var(--vert-pale); }
+  .avis .sec-title { color: var(--creme); }
+  .avis .sec-script { color: var(--vert-pale); }
+  .avis .orn-l { background: linear-gradient(to right, transparent, var(--vert-pale)); }
+  .avis .orn-r { background: linear-gradient(to left, transparent, var(--vert-pale)); }
+  .avis .orn-leaf { color: var(--vert-pale); }
+
+  .avis-grid {
+    max-width: 1080px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+
+  .avis-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(200,218,204,.15);
+    border-radius: 2px; padding: 28px 24px;
+    transition: background .2s;
+  }
+
+  .avis-card:hover { background: rgba(255,255,255,.08); }
+  .avis-card.wide { grid-column: span 2; }
+
+  .avis-stars { font-size: 13px; letter-spacing: 2px; color: var(--or-lt); margin-bottom: 8px; }
+
+  .avis-scores {
+    display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px;
+  }
+
+  .avis-score {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--vert-pale);
+    background: rgba(255,255,255,.07); padding: 3px 8px; border-radius: 1px;
+  }
+
+  .avis-txt {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; line-height: 1.8;
+    color: rgba(237,229,213,.85); font-style: italic; margin-bottom: 18px;
+    font-weight: 300;
+  }
+
+  .avis-author {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--vert-wash);
+  }
+
+  .avis-date { font-size: 11px; color: var(--vert-pale); margin-top: 3px; }
+
+  /* ── INFOS ── */
+  .infos { background: var(--creme-dk); }
+
+  .infos-grid {
+    max-width: 1080px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+
+  .info-card {
+    background: var(--blanc);
+    border: 1px solid var(--creme-dkk);
+    border-radius: 2px; padding: 32px 26px;
+  }
+
+  .info-card-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px; font-weight: 500; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--vert-lt);
+    margin-bottom: 14px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--vert-fog);
+    display: block;
+  }
+
+  .info-card p, .info-card a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px; color: var(--txt-mid); line-height: 1.85;
+    display: block; text-decoration: none; transition: color .2s;
+    font-weight: 300;
+  }
+
+  .info-card a:hover { color: var(--vert); }
+  .info-card strong { color: var(--txt); font-weight: 600; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--vert);
+    border-top: 1px solid rgba(200,218,204,.15);
+    padding: 56px 56px 30px;
+  }
+
+  .footer-inner {
+    max-width: 1080px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px;
+    margin-bottom: 40px;
+  }
+
+  .footer-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px; color: var(--creme); margin-bottom: 8px;
+  }
+
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px; font-style: italic; font-weight: 300;
+    color: var(--vert-pale); line-height: 1.7; margin-bottom: 20px;
+  }
+
+  .footer-rating {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid rgba(200,218,204,.2);
+    padding: 8px 14px; border-radius: 1px;
+  }
+
+  .footer-stars { font-size: 12px; letter-spacing: 2px; color: var(--or-lt); }
+  .footer-rating-txt { font-size: 11px; color: var(--vert-pale); font-weight: 400; }
+
+  .footer-col-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px; font-weight: 500; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--vert-pale); margin-bottom: 14px;
+  }
+
+  .footer-col p, .footer-col a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; color: var(--vert-wash); line-height: 1.9;
+    display: block; text-decoration: none;
+    transition: color .2s; font-weight: 300;
+  }
+
+  .footer-col a:hover { color: var(--creme); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.05);
+    padding-top: 24px; text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(138,175,147,.35);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    header { padding: 0 20px; }
+    nav ul { display: none; }
+    section { padding: 72px 20px; }
+    .hero { padding: 140px 20px 80px; }
+    .about-wrap { grid-template-columns: 1fr; gap: 36px; }
+    .booking-layout { grid-template-columns: 1fr; gap: 36px; }
+    .avis-grid { grid-template-columns: 1fr; }
+    .avis-card.wide { grid-column: 1; }
+    .infos-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+    .form-row { grid-template-columns: 1fr; }
+    .booking-card { padding: 28px 20px; }
+    .wine-table-head,
+    .wine-item { grid-template-columns: 1fr 50px 50px 50px; }
+    .wine-col-lbl:nth-child(5),
+    .wine-price:nth-child(5) { display: none; }
+    .menu-tabs { flex-direction: column; }
+    .tab-btn { border-right: none; border-bottom: 1px solid var(--vert-wash); }
+    .tab-btn:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div>
+    <div class="logo-script">Kelsa</div>
+    <span class="logo-sub">Bar & Restaurant · Annecy</span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">La maison</a></li>
+      <li><a href="#menu">La carte</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#infos">Infos</a></li>
+      <li><a href="#reserver" class="nav-cta">Réserver</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-script">Kelsa</div>
+  <p class="hero-sub">Bar & Restaurant · Annecy</p>
+  <div class="hero-divider">
+    <div class="h-line"></div>
+    <span class="h-leaf">&#9752;</span>
+    <div class="h-line"></div>
+  </div>
+  <p class="hero-tagline">Une cuisine généreuse et raffinée, des spécialités savoyardes et des brioches perdues inoubliables</p>
+  <div class="hero-btns">
+    <a href="#reserver" class="btn btn-cream">Réserver une table</a>
+    <a href="#menu" class="btn btn-outline">Découvrir la carte</a>
+  </div>
+  <div class="hero-badges">
+    <div class="hero-badge-item"><div class="badge-dot"></div> 30–40 € · Cena</div>
+    <div class="hero-badge-item"><div class="badge-dot"></div> Annecy</div>
+    <div class="hero-badge-item"><div class="badge-dot"></div> Service compris · Prix nets</div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about" id="about">
+  <div class="about-wrap">
+    <div class="about-imgs">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Kelsa restaurant">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Plat Kelsa">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Ambiance Kelsa">
+    </div>
+    <div class="about-text">
+      <p class="sec-label" style="text-align:left;">Notre restaurant</p>
+      <div class="sec-script" style="text-align:left;">La maison</div>
+      <h2 class="sec-title" style="text-align:left; font-size:clamp(24px,3vw,36px);">Une adresse incontournable <em>à Annecy</em></h2>
+      <div class="orn" style="justify-content:flex-start; margin-bottom:24px;">
+        <div class="orn-l" style="width:48px;"></div>
+        <span class="orn-leaf">&#9752;</span>
+        <div class="orn-r" style="width:48px;"></div>
+      </div>
+      <p>Chez Kelsa, on vous accueille toujours avec le sourire. Nos serveurs — Hana, Anthony et toute l'équipe — sont reconnus pour leur bienveillance, leur patience et leur sens du service.</p>
+      <p>Une cuisine généreuse mêlant spécialités savoyardes, poissons du lac, viandes de qualité, pâtes maison et une sélection de desserts qui font rêver — dont nos fameuses brioches perdues.</p>
+      <div class="about-pills">
+        <span class="pill">Spécialités savoyardes</span>
+        <span class="pill">Fondue & Raclette</span>
+        <span class="pill">Filets de perche</span>
+        <span class="pill">Brioches perdues</span>
+        <span class="pill">Carte des vins</span>
+        <span class="pill">Menu enfant</span>
+        <span class="pill">Sans attente</span>
+        <span class="pill">Niveau sonore bas</span>
+      </div>
+      <a href="#reserver" class="btn btn-cream" style="animation:none;opacity:1;">Réserver une table</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CARTE ═══ -->
+<section class="menu-sec" id="menu">
+  <p class="sec-label">Notre carte</p>
+  <div class="sec-script">La carte</div>
+  <div class="orn">
+    <div class="orn-l"></div>
+    <span class="orn-leaf">&#9752;</span>
+    <div class="orn-r"></div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="menu-tabs">
+    <button class="tab-btn active" onclick="showTab('froid')">Salades & Entrées</button>
+    <button class="tab-btn" onclick="showTab('savoie')">Spécialités Savoyardes</button>
+    <button class="tab-btn" onclick="showTab('chaud')">Plats Chauds</button>
+    <button class="tab-btn" onclick="showTab('desserts')">Desserts & Glaces</button>
+    <button class="tab-btn" onclick="showTab('boissons')">Boissons</button>
+    <button class="tab-btn" onclick="showTab('vins')">Carte des Vins</button>
+  </div>
+
+  <!-- SALADES / PLATS FROIDS -->
+  <div class="tab-panel active" id="tab-froid">
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Salades & Plats Froids</span><div class="mcat-line"></div></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Assiette de Charcuterie & Fromages</div><div class="mi-desc">Jambon de Savoie, Rosette, Spianata, Abondance, Reblochon</div><div class="mi-allergens">GF · P · L</div></div><div class="mi-dots"></div><span class="mi-price">19,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Tartare de Boeuf</div><div class="mi-desc">Rumsteck, câpres, cornichon, échalotes, tabasco, sauce Worcestershire · avec frites et salade composée</div><div class="mi-allergens">GF</div></div><div class="mi-dots"></div><span class="mi-price">24,00€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Tartare de Truite</div><div class="mi-desc">Pomelo, concombre, aneth, citron vert, huile de pépin de raisin et salade</div><div class="mi-allergens">GF</div></div><div class="mi-dots"></div><span class="mi-price">19,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Tomate & Burrata</div><div class="mi-desc">Mélange de tomates colorées, burrata, chips de graine de chia, pesto, basilic frais</div><div class="mi-allergens">L · GF</div></div><div class="mi-dots"></div><span class="mi-price">17,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Salade de Quinoa</div><div class="mi-desc">Halloumi grillé, quinoa, pomme, betterave, pignon de pin, roquette, vinaigrette citron — Option Vegan avec tofu</div><div class="mi-allergens">GF · N</div></div><div class="mi-dots"></div><span class="mi-price">17,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Salade Kelsa</div><div class="mi-desc">Confit de canard, pousse d'épinards, noix, framboise, oignon rouge, feta, vinaigrette framboise</div><div class="mi-allergens">GF · N</div></div><div class="mi-dots"></div><span class="mi-price">17,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Salade César</div><div class="mi-desc">Poulet rôti, laitue iceberg, copeaux de parmesan, croûtons, sauce César</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">17,50€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Flammekueche (Pizza Flambée)</span><div class="mcat-line"></div></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Classique</div><div class="mi-desc">Pâte, crème fraîche, oignons, lardons</div><div class="mi-allergens">P · L</div></div><div class="mi-dots"></div><span class="mi-price">11,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Gratinée</div><div class="mi-desc">Pâte, crème fraîche, oignons, emmental</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">11,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Truite</div><div class="mi-desc">Pâte, crème fraîche, oignons, truite</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">12,00€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Végétarienne</div><div class="mi-desc">Pâte, crème fraîche, oignons, emmental, champignons</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">11,50€</span></div>
+    </div>
+  </div>
+
+  <!-- SPÉCIALITÉS SAVOYARDES -->
+  <div class="tab-panel" id="tab-savoie">
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Spécialités Savoyardes</span><div class="mcat-line"></div></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Tartiflette ou Croziflette des Alpages</div><div class="mi-desc">Pommes de terre ou crozets, oignons, lardons, reblochon, crème fraîche et salade composée</div><div class="mi-allergens">P · L · GF</div></div><div class="mi-dots"></div><span class="mi-price">19,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Tartiflette ou Croziflette Champignon</div><div class="mi-desc">Pommes de terre ou crozets, oignons, champignons de Paris, reblochon, crème fraîche et salade composée</div><div class="mi-allergens">L · GF</div></div><div class="mi-dots"></div><span class="mi-price">19,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Gratiné d'Abondance</div><div class="mi-desc">Fromage d'Abondance fondu, vin blanc, ail, pommes de terre rissolée, jambon de pays</div><div class="mi-allergens">P · A · L · GF</div></div><div class="mi-dots"></div><span class="mi-price">21,90€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Fondant d'Arly 400g</div><div class="mi-desc">Avec pommes rissolée et jambon de pays</div><div class="mi-allergens">P · L · GF</div></div><div class="mi-dots"></div><span class="mi-price">29,00€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Fondue</div><div class="mi-desc">250g par personne, servie avec croûtons et salade composée — Minimum 2 personnes</div><div class="mi-allergens">A · L</div></div><div class="mi-dots"></div><span class="mi-price">22,90€ p.p</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Fondue Tartufata</div><div class="mi-desc">250g par personne, servie avec croûtons et salade composée, pâtes à la truffe — Minimum 2 personnes</div><div class="mi-allergens">A · L</div></div><div class="mi-dots"></div><span class="mi-price">24,90€ p.p</span></div>
+    </div>
+  </div>
+
+  <!-- PLATS CHAUDS -->
+  <div class="tab-panel" id="tab-chaud">
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Viandes</span><div class="mcat-line"></div></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Onglet</div><div class="mi-desc">Onglet 300g servie avec frites, salade composée et sauce chimichurri</div><div class="mi-allergens">GF</div></div><div class="mi-dots"></div><span class="mi-price">24,90€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Entrecôte</div><div class="mi-desc">Entrecôte 300g servie avec frites et salade composée — choix de sauce poivre ou gorgonzola</div><div class="mi-allergens">GF</div></div><div class="mi-dots"></div><span class="mi-price">29,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">KELSA Burger</div><div class="mi-desc">Steak haché 180g, pain bun brioche, Abondance, sauce Kelsa avec frites et salade composée</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">21,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Coquelet Rôti</div><div class="mi-desc">Pomme de terre grenailles, oignons grelot avec son jus</div></div><div class="mi-dots"></div><span class="mi-price">24,90€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Croque Monsieur</div><div class="mi-desc">Croque monsieur roulé servi avec frites et salade composée</div><div class="mi-allergens">P · L</div></div><div class="mi-dots"></div><span class="mi-price">21,00€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Poissons</span><div class="mcat-line"></div></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Sandre</div><div class="mi-desc">Pavé de sandre, un écrasé de pommes de terre et beurre blanc à l'ail des ours</div><div class="mi-allergens">GF · A · L</div></div><div class="mi-dots"></div><span class="mi-price">22,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Perche</div><div class="mi-desc">Filets de perche servi avec frites et salade composée, sauce tartare</div><div class="mi-allergens">GF</div></div><div class="mi-dots"></div><span class="mi-price">21,50€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Pâtes</span><div class="mcat-line"></div></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Cannelloni (Vegan)</div><div class="mi-desc">Champignons de Paris, épinard, courgette, tofu, sauce tomate, lait d'amande, poudre d'amande et salade composée</div><div class="mi-allergens">N</div></div><div class="mi-dots"></div><span class="mi-price">20,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Linguine Kelsa</div><div class="mi-desc">Linguine aux épinards, tomates cerises confites, burrata, tartufata, basilic frais</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">24,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Tagliolini Saumon Fumé</div><div class="mi-desc">Tagliolini à l'encre de seiche, saumon fumé, crème d'aneth, courgette</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">24,50€</span></div>
+    </div>
+    <div class="menu-note-box">Suppléments Garnitures +5,50€ — Légumes sautés · Salade · Frites · Pommes de terre écrasées · Pommes de terre rissolées</div>
+    <div class="menu-enfant-box">
+      <div class="menu-enfant-title">Menu Enfant</div>
+      <div class="menu-enfant-price">Moins de 10 ans · 12,50€</div>
+      <div class="menu-enfant-items">
+        <p>Croque Monsieur avec frites ou Mini Croziflette</p>
+        <p>1 boule de glace ou sorbet</p>
+        <p>Sirop avec de l'eau</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="tab-panel" id="tab-desserts">
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Nos Glaces Artisanales</span><div class="mcat-line"></div></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">2 Boules de Glace / Sorbet</div><div class="mi-desc">Vanille, Chocolat, Café, Pistache, Noisette, Noix de Coco, Framboise, Mangue, Citron, Yaourt</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">5,00€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Affogato</div><div class="mi-desc">Glace vanille avec un café espresso</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">5,00€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">La Dame Blanche</div><div class="mi-desc">Glace vanille, sauce chocolat, chantilly (4 boules)</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">7,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">La Vie en Rose</div><div class="mi-desc">Glace vanille et framboise, framboises fraîches, coulis framboise, chantilly (4 boules)</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">7,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">La Gourmande</div><div class="mi-desc">Glaces noisette et pistache, sauce chocolat, éclats de cacahuètes, chantilly</div><div class="mi-allergens">N · L</div></div><div class="mi-dots"></div><span class="mi-price">7,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">L'Exotique</div><div class="mi-desc">Glace noix de coco, sorbet mangue, noix de coco râpée, Malibu, chantilly</div><div class="mi-allergens">A · L</div></div><div class="mi-dots"></div><span class="mi-price">8,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Kahlua Liégeois</div><div class="mi-desc">Glaces vanille et café, Kahlua, chantilly</div><div class="mi-allergens">A · L</div></div><div class="mi-dots"></div><span class="mi-price">8,50€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Desserts du Moment</span><div class="mcat-line"></div></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Sélection du Moment</div><div class="mi-desc">Demandez-nous notre sélection de desserts du moment !</div></div><div class="mi-dots"></div><span class="mi-price">8,50€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Nos Brioches Perdues</span><div class="mcat-line"></div></div>
+      <div class="menu-note-box">Brioche mousseline plongée dans une crème anglaise maison et caramélisée au miel et beurre</div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">La Noix de Coco</div><div class="mi-desc">Brioche, glace noix de coco, sauce chocolat, noix de coco râpée, chantilly</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">8,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">La Savoyarde</div><div class="mi-desc">Brioche, glace yaourt, confiture de myrtille, chantilly</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">8,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">La Framboise</div><div class="mi-desc">Brioche, glace vanille, framboises fraîches, coulis framboise, chantilly</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">8,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">La Chocolat</div><div class="mi-desc">Brioche, glace chocolat, sauce chocolat, banane caramélisée, éclats de cacahuètes, chantilly</div><div class="mi-allergens">N · L</div></div><div class="mi-dots"></div><span class="mi-price">8,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">La Café</div><div class="mi-desc">Brioche, glace café, sauce caramel beurre salé, Speculoos, chantilly</div><div class="mi-allergens">L</div></div><div class="mi-dots"></div><span class="mi-price">8,50€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Crêpes & Gaufres</span><div class="mcat-line"></div></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Nature ou Sucre</div></div><div class="mi-dots"></div><span class="mi-price">5,50€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Sauce Chocolat / Nutella / Caramel Beurre Salé</div></div><div class="mi-dots"></div><span class="mi-price">6,00€</span></div>
+      <div class="menu-item"><div class="mi-wrap"><div class="mi-name">Supplément Chantilly</div></div><div class="mi-dots"></div><span class="mi-price">0,50€</span></div>
+    </div>
+    <div class="allergen-legend">
+      GF – Sans Gluten &nbsp;|&nbsp; P – Porc &nbsp;|&nbsp; N – Noix &nbsp;|&nbsp; A – Alcool &nbsp;|&nbsp; L – Lait<br>
+      Prix nets, service compris. Nous n'acceptons pas les chèques. Règlements acceptés : espèces (sauf billet de 500€), carte bleue.
+    </div>
+  </div>
+
+  <!-- BOISSONS -->
+  <div class="tab-panel" id="tab-boissons">
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Apéritifs</span><div class="mcat-line"></div></div>
+      <div class="drink-item"><span class="d-name">Kir cassis, mûre, pêche, framboise</span><div class="mi-dots"></div><span class="mi-price">4,00€</span></div>
+      <div class="drink-item"><span class="d-name">Kir Pétillant (Prosecco)</span><div class="mi-dots"></div><span class="mi-price">5,50€</span></div>
+      <div class="drink-item"><span class="d-name">Prosecco</span><div class="mi-dots"></div><span class="mi-price">5,00€</span></div>
+      <div class="drink-item"><span class="d-name">Ricard</span><span class="d-size">2cl</span><div class="mi-dots"></div><span class="mi-price">4,00€</span></div>
+      <div class="drink-item"><span class="d-name">Porto, Suze</span><span class="d-size">4cl</span><div class="mi-dots"></div><span class="mi-price">4,50€</span></div>
+      <div class="drink-item"><span class="d-name">Campari</span><span class="d-size">4cl</span><div class="mi-dots"></div><span class="mi-price">4,50€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Bières Pression</span><div class="mcat-line"></div><span style="font-size:12px; color:var(--txt-lt);">25cl · 50cl</span></div>
+      <div class="drink-item"><span class="d-name">Mont Blanc Cristal</span><div class="mi-dots"></div><span class="mi-price">4,50€ · 8,50€</span></div>
+      <div class="drink-item"><span class="d-name">Mont Blanc Blanche</span><div class="mi-dots"></div><span class="mi-price">4,50€ · 8,50€</span></div>
+      <div class="drink-item"><span class="d-name">Mont Blanc IPA</span><div class="mi-dots"></div><span class="mi-price">4,50€ · 8,50€</span></div>
+      <div class="drink-item"><span class="d-name">Mont Blanc Rousse</span><div class="mi-dots"></div><span class="mi-price">4,50€ · 8,50€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Bières Bouteilles</span><div class="mcat-line"></div><span style="font-size:12px; color:var(--txt-lt);">33cl</span></div>
+      <div class="drink-item"><span class="d-name">Mont Blanc Bleue</span><div class="mi-dots"></div><span class="mi-price">5,50€</span></div>
+      <div class="drink-item"><span class="d-name">Mont Blanc Sylvanus</span><div class="mi-dots"></div><span class="mi-price">5,50€</span></div>
+      <div class="drink-item"><span class="d-name">Mont Blanc Verte</span><div class="mi-dots"></div><span class="mi-price">5,50€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Sodas & Soft</span><div class="mcat-line"></div></div>
+      <div class="drink-item"><span class="d-name">Coca-Cola, Coca-Cola Zero, Perrier</span><span class="d-size">33cl</span><div class="mi-dots"></div><span class="mi-price">4,00€</span></div>
+      <div class="drink-item"><span class="d-name">Fuzetea Pêche, Orangina, Schweppes Agrumes</span><span class="d-size">25cl</span><div class="mi-dots"></div><span class="mi-price">4,00€</span></div>
+      <div class="drink-item"><span class="d-name">Jus de Fruit : Orange, Pomme, Ananas, Abricot, Tomate</span><span class="d-size">25cl</span><div class="mi-dots"></div><span class="mi-price">4,00€</span></div>
+      <div class="drink-item"><span class="d-name">Limonade</span><span class="d-size">25cl</span><div class="mi-dots"></div><span class="mi-price">2,80€</span></div>
+      <div class="drink-item"><span class="d-name">Sirop à l'eau</span><div class="mi-dots"></div><span class="mi-price">2,00€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Eaux Minérales</span><div class="mcat-line"></div><span style="font-size:12px; color:var(--txt-lt);">50cl · 1l</span></div>
+      <div class="drink-item"><span class="d-name">San Benedetto Plate</span><div class="mi-dots"></div><span class="mi-price">4,00€ · 5,00€</span></div>
+      <div class="drink-item"><span class="d-name">San Benedetto Gazeuse</span><div class="mi-dots"></div><span class="mi-price">4,50€ · 5,50€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Digestifs</span><div class="mcat-line"></div><span style="font-size:12px; color:var(--txt-lt);">4cl</span></div>
+      <div class="drink-item"><span class="d-name">Amaretto, Cognac, Génépi, Get 27, Grappa, Limoncello, Vodka, Whisky</span><div class="mi-dots"></div><span class="mi-price">7,00€</span></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Boissons Chaudes</span><div class="mcat-line"></div></div>
+      <div class="drink-item"><span class="d-name">Espresso</span><div class="mi-dots"></div><span class="mi-price">2,00€</span></div>
+      <div class="drink-item"><span class="d-name">Double Espresso</span><div class="mi-dots"></div><span class="mi-price">3,50€</span></div>
+      <div class="drink-item"><span class="d-name">Cappucino, Café Crème, Thé</span><div class="mi-dots"></div><span class="mi-price">4,00€</span></div>
+    </div>
+  </div>
+
+  <!-- VINS -->
+  <div class="tab-panel" id="tab-vins">
+    <div class="wine-table-head">
+      <div class="wine-col-lbl">Vin</div>
+      <div class="wine-col-lbl">Verre</div>
+      <div class="wine-col-lbl">25cl</div>
+      <div class="wine-col-lbl">50cl</div>
+      <div class="wine-col-lbl">75cl</div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Vin Blanc</span><div class="mcat-line"></div></div>
+      <div class="wine-item"><div><div class="wine-name">AOP Touraine Sauvignon Domaine Cyril Desloges</div><div class="wine-desc">Robe or pâle, nez intense et complexe aux arômes de fleurs blanches et agrumes</div></div><div class="wine-price">5,00€</div><div class="wine-price">8,00€</div><div class="wine-price">15,00€</div><div class="wine-price">22,00€</div></div>
+      <div class="wine-item"><div><div class="wine-name">IGP Pays d'Oc Côté Mas Blanc Domaine Paul Mas</div><div class="wine-desc">Vin blanc rond et souple, arômes fruités de pêche et de poire avec une belle longue en bouche</div></div><div class="wine-price">5,50€</div><div class="wine-price">9,00€</div><div class="wine-price">16,50€</div><div class="wine-price">23,80€</div></div>
+      <div class="wine-item"><div><div class="wine-name">IGP Côtes de Gascogne Cassaigne Blanc Plaimont</div><div class="wine-desc">Notes de fruits blancs, de fleurs et de brioche grâce à un élevage précis sur lies fines</div></div><div class="wine-price">6,00€</div><div class="wine-price">11,50€</div><div class="wine-price">17,50€</div><div class="wine-price">26,00€</div></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Vin Blanc de Savoie</span><div class="mcat-line"></div></div>
+      <div class="wine-item"><div><div class="wine-name">Roussette Savoie Domaine des Rocailles</div><div class="wine-desc">Arômes de fleurs et de fruits blancs, bouche harmonieuse, longue et bien structurée</div></div><div class="wine-price">5,00€</div><div class="wine-price">8,00€</div><div class="wine-price">15,00€</div><div class="wine-price">22,00€</div></div>
+      <div class="wine-item"><div><div class="wine-name">Chignin Bergeron Domaine des Rocailles</div><div class="wine-desc">Belle roussanne aux arômes d'abricots, d'ananas et de miels d'acacia</div></div><div class="wine-price">7,00€</div><div class="wine-price">13,00€</div><div class="wine-price">19,00€</div><div class="wine-price">31,00€</div></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Vin Rosé</span><div class="mcat-line"></div></div>
+      <div class="wine-item"><div><div class="wine-name">Terre d'Aixpressions Vignerons du Roy René</div><div class="wine-desc">Jolie couleur rose pâle, notes de fruits à chair blanche</div></div><div class="wine-price">6,50€</div><div class="wine-price">12,00€</div><div class="wine-price">18,00€</div><div class="wine-price">28,00€</div></div>
+    </div>
+    <div class="menu-cat">
+      <div class="menu-cat-head"><span class="mcat-title">Vin Rouge</span><div class="mcat-line"></div></div>
+      <div class="wine-item"><div><div class="wine-name">Saumur Champigny Clos des Morains Domaine des Hauts de Sanziers</div><div class="wine-desc">Couleur rubis, parfums de fruits rouges bien mûrs</div></div><div class="wine-price">6,00€</div><div class="wine-price">12,00€</div><div class="wine-price">17,00€</div><div class="wine-price">27,00€</div></div>
+      <div class="wine-item"><div><div class="wine-name">IGP Pays d'Oc Epicurius Domaine Calmel & Joseph</div><div class="wine-desc">Bouche ronde, fruitée, harmonieuse. Fruits rouges et noirs, violette, réglisse</div></div><div class="wine-price">6,00€</div><div class="wine-price">11,00€</div><div class="wine-price">17,00€</div><div class="wine-price">25,00€</div></div>
+      <div class="wine-item"><div><div class="wine-name">Saint Joseph Septentrio Cave de Saint Désirat</div><div class="wine-desc">Vin charnu et pulpeux, notes de fruits noirs et rouges, réglissées et poivrées</div></div><div class="wine-price">8,00€</div><div class="wine-price">15,00€</div><div class="wine-price">21,00€</div><div class="wine-price">35,00€</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RÉSERVATION ═══ -->
+<section class="booking" id="reserver">
+  <div class="booking-layout">
+    <div class="booking-side">
+      <p class="sec-label" style="text-align:left;">Réservation</p>
+      <div class="sec-script" style="text-align:left; margin-bottom:6px;">Votre table</div>
+      <h2 class="sec-title" style="text-align:left; font-size:clamp(22px,3vw,34px); margin-bottom:16px;">vous <em>attend</em></h2>
+      <div class="orn" style="justify-content:flex-start; margin-bottom:28px;">
+        <div class="orn-l" style="width:48px;"></div>
+        <span class="orn-leaf">&#9752;</span>
+        <div class="orn-r" style="width:48px;"></div>
+      </div>
+      <div class="bk-list">
+        <div class="bk-row">
+          <div class="bk-icon">&#9741;</div>
+          <div class="bk-text"><strong>Adresse</strong><span>Annecy, France</span></div>
+        </div>
+        <div class="bk-row">
+          <div class="bk-icon">&#9203;</div>
+          <div class="bk-text"><strong>Service</strong><span>Déjeuner & Dîner<br>30–40 € par personne</span></div>
+        </div>
+        <div class="bk-row">
+          <div class="bk-icon">&#10003;</div>
+          <div class="bk-text"><strong>Infos pratiques</strong><span>Service compris · Prix nets<br>Espèces & carte bleue<br>Pas de chèques</span></div>
+        </div>
+        <div class="bk-row">
+          <div class="bk-icon">&#9752;</div>
+          <div class="bk-text"><strong>Ambiance</strong><span>Niveau sonore très bas<br>Groupes de toutes tailles<br>Sans attente</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-card">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="prenom">Prénom *</label>
+          <input type="text" id="prenom" placeholder="Votre prénom">
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom *</label>
+          <input type="text" id="nom" placeholder="Votre nom">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" placeholder="votre@email.com">
+        </div>
+        <div class="form-group">
+          <label for="tel">Téléphone *</label>
+          <input type="tel" id="tel" placeholder="06 00 00 00 00">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date">Date *</label>
+          <input type="date" id="date">
+        </div>
+        <div class="form-group">
+          <label for="heure">Heure *</label>
+          <select id="heure">
+            <option value="">Choisir un horaire</option>
+            <optgroup label="Déjeuner">
+              <option>12:00</option><option>12:30</option>
+              <option>13:00</option><option>13:30</option>
+            </optgroup>
+            <optgroup label="Dîner">
+              <option>19:00</option><option>19:30</option>
+              <option>20:00</option><option>20:30</option>
+              <option>21:00</option><option>21:30</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="couverts">Nombre de personnes *</label>
+          <select id="couverts">
+            <option value="">Personnes</option>
+            <option>1</option><option>2</option><option>3</option>
+            <option>4</option><option>5</option><option>6</option>
+            <option>7</option><option>8</option><option>9</option>
+            <option>10 ou plus</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="occasion">Occasion</label>
+          <select id="occasion">
+            <option value="">Sans occasion particulière</option>
+            <option>Anniversaire</option>
+            <option>Repas en famille</option>
+            <option>Repas d'affaires</option>
+            <option>Repas entre amis</option>
+            <option>Repas en couple</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group full" style="margin-bottom:10px;">
+        <label for="msg">Message / Demandes spéciales</label>
+        <textarea id="msg" placeholder="Allergies, chaise haute, anniversaire à fêter, fondue pour 2…"></textarea>
+      </div>
+      <button class="btn-submit" onclick="alert('Merci pour votre demande de réservation ! Nous vous contacterons rapidement pour confirmation.')">
+        Confirmer la réservation
+      </button>
+      <p class="form-legal">Service compris · Prix nets · Paiement : espèces ou carte bleue</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AVIS ═══ -->
+<section class="avis" id="avis">
+  <p class="sec-label">Avis clients</p>
+  <div class="sec-script">Ils nous font confiance</div>
+  <div class="orn">
+    <div class="orn-l"></div>
+    <span class="orn-leaf">&#9752;</span>
+    <div class="orn-r"></div>
+  </div>
+  <div class="avis-grid">
+
+    <div class="avis-card wide">
+      <div class="avis-stars">★★★★★</div>
+      <div class="avis-scores">
+        <span class="avis-score">Cuisine : 5</span>
+        <span class="avis-score">Service : 5</span>
+        <span class="avis-score">Ambiance : 5</span>
+      </div>
+      <p class="avis-txt">Une agréable surprise pour notre dernier repas à Annecy ! J'avais envie de poisson et je n'ai vraiment pas été déçue, il était délicieux. Mon compagnon a choisi un plat au fromage et il a adoré. Les quantités étaient généreuses. Le service était top, les serveuses sont vraiment au petit soin, souriantes et de très bons conseils. Les cocktails étaient également excellents. Et le dessert, la brioche perdue savoyarde, était vraiment exceptionnel. Une adresse que je recommande vivement.</p>
+      <div class="avis-author">Estelle Barbier</div>
+      <div class="avis-date">Février 2025 · Local Guide · 18 avis — Plats recommandés : Filets de Perche, Spritz Lemon</div>
+    </div>
+
+    <div class="avis-card">
+      <div class="avis-stars">★★★★★</div>
+      <div class="avis-scores">
+        <span class="avis-score">Cuisine : 5</span>
+        <span class="avis-score">Service : 5</span>
+        <span class="avis-score">Ambiance : 5</span>
+      </div>
+      <p class="avis-txt">Nous avons passé un très bon moment, la serveuse était très agréable avec une pointe d'humour très appréciable, nous avons pris un gratiné d'abondance généreux en fromage, sans oublier son dessert, crêpe au caramel et dame blanche. Je recommande fortement.</p>
+      <div class="avis-author">Séverine Berthon</div>
+      <div class="avis-date">Août 2025</div>
+    </div>
+
+    <div class="avis-card">
+      <div class="avis-stars">★★★★★</div>
+      <div class="avis-scores">
+        <span class="avis-score">Cuisine : 5</span>
+        <span class="avis-score">Service : 5</span>
+        <span class="avis-score">Ambiance : 5</span>
+      </div>
+      <p class="avis-txt">Encore une nouvelle fois à Kelsa et toujours aussi bien reçue — merci au serveur/serveuse Hana et Anthony pour ce service. Niveau de bruit très bas, aucune attente.</p>
+      <div class="avis-author">Thao Nourisson</div>
+      <div class="avis-date">Août 2025 · 30–40€</div>
+    </div>
+
+    <div class="avis-card">
+      <div class="avis-stars">★★★★★</div>
+      <div class="avis-scores">
+        <span class="avis-score">Cuisine : 5</span>
+        <span class="avis-score">Service : 5</span>
+        <span class="avis-score">Ambiance : 5</span>
+      </div>
+      <p class="avis-txt">Personnel très accueillant. Les plats arrivent plutôt rapidement. Nous avons pris la viande Onglet et les Linguines Kelsa qui étaient tous deux très bons et copieux. Je recommande !</p>
+      <div class="avis-author">Bui Tuan Maelys</div>
+      <div class="avis-date">Août 2025</div>
+    </div>
+
+    <div class="avis-card">
+      <div class="avis-stars">★★★★★</div>
+      <div class="avis-scores">
+        <span class="avis-score">Cuisine : 5</span>
+        <span class="avis-score">Service : 5</span>
+        <span class="avis-score">Ambiance : 4</span>
+      </div>
+      <p class="avis-txt">Des bons petits plats et un service agréable.</p>
+      <div class="avis-author">Victorine Lacroix</div>
+      <div class="avis-date">Avril 2026</div>
+    </div>
+
+    <div class="avis-card">
+      <div class="avis-stars">★★★★★</div>
+      <div class="avis-scores">
+        <span class="avis-score">Cuisine : 5</span>
+        <span class="avis-score">Service : 5</span>
+        <span class="avis-score">Ambiance : 5</span>
+      </div>
+      <p class="avis-txt">Excellent moment avec nos enfants en bas âge. Personnel patient et à l'écoute des besoins.</p>
+      <div class="avis-author">Xavier Leprince</div>
+      <div class="avis-date">Avril 2026</div>
+    </div>
+
+  </div>
+  <div style="text-align:center; margin-top:40px;">
+    <a href="#reserver" class="btn btn-cream">Réserver une table</a>
+  </div>
+</section>
+
+<!-- ═══ INFOS ═══ -->
+<section class="infos" id="infos">
+  <p class="sec-label">Informations pratiques</p>
+  <div class="sec-script" style="margin-bottom:6px;">Nous trouver</div>
+  <div class="orn">
+    <div class="orn-l"></div>
+    <span class="orn-leaf">&#9752;</span>
+    <div class="orn-r"></div>
+  </div>
+  <div class="infos-grid">
+    <div class="info-card">
+      <span class="info-card-label">Localisation</span>
+      <p><strong>Kelsa Bar & Restaurant</strong><br>Annecy, France</p>
+    </div>
+    <div class="info-card">
+      <span class="info-card-label">Tarifs & Paiement</span>
+      <p><strong>30–40 € par personne</strong><br>Service compris · Prix nets<br>Espèces (sauf billet 500€)<br>Carte bleue acceptée<br>Pas de chèques</p>
+    </div>
+    <div class="info-card">
+      <span class="info-card-label">Confort & Accessibilité</span>
+      <p>Niveau sonore très bas<br>Groupes de toutes tailles<br>Familles avec enfants<br>Sans attente<br>Service patient et attentionné</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-script">Kelsa</div>
+      <p class="footer-tagline">Bar & Restaurant à Annecy.<br>Une cuisine généreuse, des spécialités savoyardes et des brioches perdues inoubliables.</p>
+      <div class="footer-rating">
+        <span class="footer-stars">★★★★★</span>
+        <span class="footer-rating-txt">Avis 5/5 · Recommandé</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Navigation</p>
+      <a href="#about">La maison</a>
+      <a href="#menu">La carte</a>
+      <a href="#reserver">Réservation</a>
+      <a href="#avis">Avis clients</a>
+      <a href="#infos">Informations</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Informations</p>
+      <p>Annecy, France</p>
+      <p>30–40 € · Service compris</p>
+      <p>Déjeuner & Dîner</p>
+      <br>
+      <p>Espèces & Carte bleue</p>
+      <p>Pas de chèques</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © Kelsa Bar & Restaurant · Annecy
+  </div>
+</footer>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
